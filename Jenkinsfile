@@ -3,21 +3,24 @@ pipeline {
 
     stages {
 
+<<<<<<< HEAD
         stage('Clone Repository') {
             steps {
                 git 'https://github.com/Vidit72wanjari/ci-demo-project.git'
             }
         }
 
+=======
+>>>>>>> 56f7b73 (removed clone stage + fixed pipeline)
         stage('Install Dependencies') {
             steps {
-                sh 'pip install -r requirements.txt'
+                bat 'pip install -r requirements.txt'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'pytest --maxfail=1 --disable-warnings -q'
+                bat 'pytest'
             }
         }
 
